@@ -33,6 +33,7 @@ int main()
     }
     else if (pid == 0)
     {
+      lock(&cv.lk);
       struct stat stats;
       fstat(fd, &stats);
       printf(1, "file size = %d\n", stats.size);
